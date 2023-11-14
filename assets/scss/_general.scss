@@ -1,0 +1,79 @@
+body {
+    color: $black;
+    font-family: ProximaNova;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+/*scroll bar*/
+/* Работает в Firefox */
+* {
+    scrollbar-width: thin;
+    /* "auto" или "thin" */
+    scrollbar-color: #FFD00E #F9F9F9;
+    /* цвет бегунка и зоны отслеживания */
+}
+
+/* Работает в Chrome, Edge и Safari */
+*::-webkit-scrollbar {
+    width: 7px;
+    /* ширина всей полосы прокрутки */
+}
+
+*::-webkit-scrollbar-track {
+    background: #F9F9F9;
+    /* цвет зоны отслеживания */
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #FFD00E;
+    /* цвет бегунка */
+    border-radius: 20px;
+    /* округлось бегунка */
+    border: 2px solid #F9F9F9;
+    /* отступ вокруг бегунка */
+    height: 150px;
+    /* задайте желаемую высоту бегунка */
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.container {
+    position: relative;
+    max-width: 1920px;
+    padding: 0 75px;
+    margin: 0 auto;
+
+    @include mobile {
+        padding: 0 15px;
+    }
+}
+
+p {
+
+    margin-top: 15px;
+    & b {
+        font-weight: 700;
+    }
+}
+
+a {
+    color: inherit;
+}
+
+.slick-initialized .slick-slide {
+    display: flex;
+}
+
+.section__title {
+    font-variant-numeric: lining-nums proportional-nums;
+    margin-bottom: 50px;
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 125%;
+}

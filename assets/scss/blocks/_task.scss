@@ -1,0 +1,30 @@
+.task {
+    padding: 100px 0;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0 40px;
+    }
+
+    &__img {
+        border-radius: 10px;
+    }
+
+    &__content {
+        max-height: 400px;
+        overflow-y: scroll;
+    }
+
+    &__text {
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin: 0;
+        }
+
+        & b {
+            font-weight: 700;
+        }
+    }
+}

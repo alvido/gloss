@@ -1,0 +1,507 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+*, :before, :after {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  display: block;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: url("../fonts/ProximaNova-Regular.woff"), url("../fonts/ProximaNova-Regular.woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ProximaNova";
+  src: url("../fonts/ProximaNova-Semibold.woff"), url("../fonts/ProximaNova-Semibold.woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ProximaNova";
+  src: url("../fonts/ProximaNova-Bold.woff"), url("../fonts/ProximaNova-Bold.woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ProximaNova";
+  src: url("../fonts/ProximaNova-Extrabld.woff"), url("../fonts/ProximaNova-Extrabld.woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ProximaNova";
+  src: url("../fonts/ProximaNova-Black.woff"), url("../fonts/ProximaNova-Black.woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+body {
+  color: #333;
+  font-family: ProximaNova;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+/*scroll bar*/
+/* Работает в Firefox */
+* {
+  scrollbar-width: thin;
+  /* "auto" или "thin" */
+  scrollbar-color: #FFD00E #F9F9F9;
+  /* цвет бегунка и зоны отслеживания */
+}
+
+/* Работает в Chrome, Edge и Safari */
+*::-webkit-scrollbar {
+  width: 7px;
+  /* ширина всей полосы прокрутки */
+}
+
+*::-webkit-scrollbar-track {
+  background: #F9F9F9;
+  /* цвет зоны отслеживания */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #FFD00E;
+  /* цвет бегунка */
+  border-radius: 20px;
+  /* округлось бегунка */
+  border: 2px solid #F9F9F9;
+  /* отступ вокруг бегунка */
+  height: 150px;
+  /* задайте желаемую высоту бегунка */
+}
+
+.main {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  position: relative;
+  max-width: 1920px;
+  padding: 0 75px;
+  margin: 0 auto;
+}
+@media (max-width: 560px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+p {
+  margin-top: 15px;
+}
+p b {
+  font-weight: 700;
+}
+
+a {
+  color: inherit;
+}
+
+.slick-initialized .slick-slide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.section__title {
+  font-variant-numeric: lining-nums proportional-nums;
+  margin-bottom: 50px;
+  font-size: 44px;
+  font-weight: 800;
+  line-height: 125%;
+}
+
+.header {
+  padding: 16px 0;
+}
+.header__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.header__menu--list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.header__menu--item {
+  padding: 0 50px;
+  position: relative;
+}
+.header__menu--item::after {
+  content: "";
+  display: block;
+  width: 1px;
+  opacity: 0.1;
+  background: #333;
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  right: 0px;
+}
+.header__menu--item:first-child {
+  padding-left: 0;
+}
+.header__menu--item:last-child {
+  padding-right: 0;
+}
+.header__menu--item:last-child::after {
+  display: none;
+}
+.header__menu--link {
+  font-variant-numeric: lining-nums proportional-nums;
+  font-weight: 600;
+  line-height: 125%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.header__menu--link:hover {
+  color: #FFDF00;
+}
+.header__contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0 40px;
+}
+.header__call--schedule {
+  font-variant-numeric: lining-nums proportional-nums;
+  font-size: 16px;
+  line-height: 125%;
+}
+.header__call--number {
+  font-variant-numeric: lining-nums proportional-nums;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 125%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0 8px;
+}
+.header__call--number .header__chevron {
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.header__call--number .header__chevron:hover {
+  scale: 1.1;
+}
+.header__call--list {
+  display: none;
+}
+
+.social__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0 12px;
+}
+
+.hero {
+  position: relative;
+}
+.hero::after {
+  content: "";
+  display: block;
+  width: 760px;
+  height: 710px;
+  background: url(../images/hero-bg.svg) no-repeat center;
+  background-size: contain;
+  position: absolute;
+  right: 0px;
+  top: 80px;
+  z-index: -1;
+}
+.hero__decor {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.hero__decor .hero__decor--circle {
+  display: block;
+  position: absolute;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background: linear-gradient(134deg, #FFDF00 -7.01%, #FFB800 109.07%);
+  border-radius: 50%;
+  opacity: 0.15;
+}
+.hero__decor .hero__decor--circle.hero__decor--circle1 {
+  width: 436px;
+  height: 436px;
+  top: 33px;
+  left: -140px;
+}
+.hero__decor .hero__decor--circle.hero__decor--circle2 {
+  width: 218px;
+  height: 218px;
+  top: 430px;
+  left: 596px;
+}
+.hero__decor .hero__decor--circle.hero__decor--circle3 {
+  width: 93px;
+  height: 93px;
+  top: 33px;
+  right: 637px;
+}
+.hero__decor .hero__decor--circle.hero__decor--circle4 {
+  width: 31px;
+  height: 31px;
+  top: 513px;
+  right: 795px;
+}
+.hero__item {
+  padding: 100px 0 70px 0;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.hero__content {
+  max-width: 1060px;
+}
+.hero__content span {
+  font-weight: 700;
+}
+.hero__content h1 {
+  font-family: ProximaNova;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-size: 90px;
+  font-weight: 900;
+  line-height: 110%;
+}
+.hero__content p {
+  font-weight: 700;
+}
+.hero__content .button {
+  margin-top: 40px;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 125%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 310px;
+  padding: 20px 65px;
+  border-radius: 5px;
+  background: linear-gradient(134deg, #FFDF00 -7.01%, #FFB800 109.07%);
+}
+.hero__img {
+  position: relative;
+  padding: 30px 0 0 0;
+}
+.hero .scroll__btn {
+  position: absolute;
+  bottom: 47px;
+  left: 50%;
+  translate: -50% 0;
+  color: var(--Black, #333);
+  font-variant-numeric: lining-nums proportional-nums;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 125%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 16px 0;
+  cursor: pointer;
+  background: transparent;
+}
+.hero .slick-dots {
+  position: absolute;
+  left: 0;
+  bottom: 116px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0 17px;
+}
+.hero .slick-dots button {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #333;
+  font-size: 0;
+  background: transparent;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+.hero .slick-dots .slick-active button {
+  opacity: 1;
+  background: #FFD00E;
+  border: 1px solid #FFD00E;
+}
+
+.task {
+  padding: 100px 0;
+}
+.task__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0 40px;
+}
+.task__img {
+  border-radius: 10px;
+}
+.task__content {
+  max-height: 400px;
+  overflow-y: scroll;
+}
+.task__text {
+  margin-bottom: 10px;
+}
+.task__text:last-child {
+  margin: 0;
+}
+.task__text b {
+  font-weight: 700;
+}
+
+.team {
+  padding: 50px 0;
+  position: relative;
+}
+.team::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(134deg, #FFDF00 -7.01%, #FFB800 109.07%), #FFFEFC;
+  z-index: -1;
+  opacity: 0.7;
+}
+.team__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.team__content {
+  max-width: 870px;
+}
+.team__title {
+  font-variant-numeric: lining-nums proportional-nums;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 125%;
+}
+.team__partners {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0 60px;
+}/*# sourceMappingURL=style.css.map */
